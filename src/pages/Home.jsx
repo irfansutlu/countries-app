@@ -1,37 +1,23 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Search from "../components/Search";
-import Table from "../components/Table";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const [countries, setCountries] = useState([]);
-  const [searching, setSearching] = useState("");
-  const [selected, setSelected] = useState("");
-
-  const getCountries = async () => {
-    const { data } = await axios("https://restcountries.com/v2/all");
-    setCountries(data);
-    console.log(data);
-  };
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
+  const navigate = useNavigate();
   return (
-    <div className="container bg-dark mt-5 p-5 text-light">
-      <Search />
-      {countries.map((country) => {
-        return (
-          <Table
-            image={country.flags.png}
-            name={country.name}
-            capital={country.capital}
-            region={country.region}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="container p-3 bg-danger text-light fw-bold d-flex justify-content-between">
+        <span onClick={() => navigate("/capital")} className="btn btn-primary">
+          Capital Search
+        </span>
+        <span
+          onClick={() => navigate("/searchword")}
+          className="btn btn-primary"
+        >
+          Search Word
+        </span>
+      </div>
+      <div></div>
+    </>
   );
 };
 
