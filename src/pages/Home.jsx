@@ -16,7 +16,12 @@ const Home = () => {
           Search Word
         </span>
       </div>
-      <div></div>
+      <div className="container">
+        <img
+          src="https://www.creativefabrica.com/wp-content/uploads/2020/09/23/WELCOME-Graphics-5632158-1.jpg"
+          class="img-fluid"
+        />
+      </div>
     </>
   );
 };

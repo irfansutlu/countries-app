@@ -27,13 +27,15 @@ const Capital = () => {
   }, []);
 
   return (
-    <div className="container bg-dark mt-5 p-5 text-light position-relative">
-      <p class="position-absolute top-2 start-2 translate-middle btn btn-danger" onClick={()=>navigate(-1)}>Go Back</p>
+    <div className="container bg-dark mt-5 p-5 text-light position-relative ">
+      <p
+        class="position-absolute top-2 start-2 translate-middle btn btn-danger"
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </p>
       <h2 className="text-center">Search Capital</h2>
-      <SearchCapital
-        setSearching={setSearching}
-        getCountries={getCountries}
-      />
+      <SearchCapital setSearching={setSearching} getCountries={getCountries} />
       <table class="table bg-warning">
         <thead>
           <tr className="text-light fs-3">
@@ -45,7 +47,7 @@ const Capital = () => {
         </thead>
         {countries.map((country) => {
           return (
-            <tbody class="table-group-divider fw-bold">
+            <tbody class="table-group-divider fw-bold table-responsive">
               <Table
                 image={country.flags.png}
                 name={country.name.common}
