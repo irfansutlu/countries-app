@@ -15,10 +15,10 @@ const Capital = () => {
         `https://restcountries.com/v3.1/capital/${searching}`
       );
       setCountries(data);
+      console.log(data)
     } else {
       const { data } = await axios(`https://restcountries.com/v3.1/all`);
       setCountries(data);
-      console.log(data);
     }
   };
 
